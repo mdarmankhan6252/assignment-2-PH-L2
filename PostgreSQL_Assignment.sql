@@ -51,6 +51,8 @@ INSERT INTO rangers (name, region) VALUES
 ('Varun Jain', 'Sunset Savannah'),
 ('Alisha Thomas', 'Cloud Forest Perimeter');
 
+
+SELECT * FROM rangers;
 -- species data
 
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
@@ -79,33 +81,58 @@ INSERT INTO species (common_name, scientific_name, discovery_date, conservation_
 -- sightings data
 
 INSERT INTO sightings (ranger_id, species_id, sighting_time, location, notes) VALUES
-(1, 3, '2024-12-02', 'Northern Highlands - Sector A', 'Tracks found near waterhole'),
-(2, 1, '2024-11-28', 'Eastern Grasslands - Trail 5', 'Seen resting under shade'),
-(3, 5, '2025-01-05', 'Mangrove Coastline - Estuary', 'Swimming near the banks'),
-(4, 2, '2024-10-21', 'Western Savannah - Ridge Area', 'Group of three spotted'),
-(5, 7, '2025-02-10', 'Mountain Ridge Forest - West Slope', 'Roaring heard, no visual'),
-(6, 4, '2025-03-14', 'Delta Wetlands - Island Patch', 'Footprints and broken shrubs'),
-(7, 6, '2024-09-12', 'Southern Rainforest - South Loop', 'Seen from observation tower'),
-(8, 3, '2024-12-25', 'Eastern Plateau - Watchpoint 2', 'Brief visual confirmation'),
-(9, 9, '2025-04-03', 'Arid Rocklands - Cave Entrance', 'Sheltering from heat'),
-(10, 8, '2025-03-30', 'Central Bamboo Forest - East Path', 'Eaten foliage spotted'),
-(11, 5, '2025-05-02', 'Pine Valley - Northern Trail', 'Quick movement through trees'),
-(12, 10, '2025-01-22', 'Riverbend Sanctuary - Marsh Edge', 'Calls heard, possibly mating'),
-(13, 2, '2025-02-18', 'Foggy Hills - High Ridge', 'Spotted briefly in mist'),
-(14, 1, '2025-03-05', 'Coral Reef Reserve - Lagoon Area', 'Seen swimming gracefully'),
-(15, 4, '2025-03-28', 'Windy Desert Edge - Rock Cluster', 'Seen near burrow'),
-(16, 6, '2024-12-11', 'Western Wetlands - Observation Deck', 'Noticed resting on log'),
+(7, 12, '2024-12-02', 'Northern Highlands - Sector A', 'Tracks found near waterhole'),
+(15, 1, '2024-11-28', 'Eastern Grasslands - Trail 5', 'Seen resting under shade'),
+(3, 17, '2025-01-05', 'Mangrove Coastline - Estuary', 'Swimming near the banks'),
+(12, 8, '2024-10-21', 'Western Savannah - Ridge Area', 'Group of three spotted'),
+(5, 20, '2025-02-10', 'Mountain Ridge Forest - West Slope', 'Roaring heard, no visual'),
+(1, 4, '2025-03-14', 'Delta Wetlands - Island Patch', 'Footprints and broken shrubs'),
+(20, 6, '2024-09-12', 'Southern Rainforest - South Loop', 'Seen from observation tower'),
+(8, 2, '2024-12-25', 'Eastern Plateau - Watchpoint 2', 'Brief visual confirmation'),
+(9, 10, '2025-04-03', 'Arid Rocklands - Cave Entrance', 'Sheltering from heat'),
+(11, 9, '2025-03-30', 'Central Bamboo Forest - East Path', 'Eaten foliage spotted'),
+(4, 15, '2025-05-02', 'Pine Valley - Northern Trail', 'Quick movement through trees'),
+(6, 3, '2025-01-22', 'Riverbend Sanctuary - Marsh Edge', 'Calls heard, possibly mating'),
+(13, 19, '2025-02-18', 'Foggy Hills - High Ridge', 'Spotted briefly in mist'),
+(14, 18, '2025-03-05', 'Coral Reef Reserve - Lagoon Area', 'Seen swimming gracefully'),
+(16, 5, '2025-03-28', 'Windy Desert Edge - Rock Cluster', 'Seen near burrow'),
+(18, 13, '2024-12-11', 'Western Wetlands - Observation Deck', 'Noticed resting on log'),
 (17, 7, '2025-04-08', 'Lakeview Range - Cliffside Trail', 'Observed with binoculars'),
-(18, 10, '2025-05-11', 'Orchid Valley - Lower Grove', 'Nocturnal movement recorded'),
-(19, 8, '2025-02-14', 'Sunset Savannah - South Boundary', 'Pair seen hunting'),
-(20, 9, '2025-01-17', 'Cloud Forest Perimeter - Fogline', 'Camera trap capture confirmed');
+(2, 11, '2025-05-11', 'Orchid Valley - Lower Grove', 'Nocturnal movement recorded'),
+(10, 14, '2025-02-14', 'Sunset Savannah - South Boundary', 'Pair seen hunting'),
+(19, 16, '2025-01-17', 'Cloud Forest Perimeter - Fogline', 'Camera trap capture confirmed');
 
+
+
+SELECT * FROM rangers;
+SELECT * FROM species;
+SELECT * FROM sightings;
+
+
+
+--problem - 1: 
+
+INSERT INTO rangers(name, region) VALUES ('Derek Fox', 'Coastal Plains');
+
+
+--problem - 2: 
+
+SELECT count(*) as unique_species_count FROM species;
+
+
+--problem - 3:
+
+SELECT * FROM sightings WHERE location ILIKE '%Pass%';
+
+
+--problem - 4:
 
 SELECT * FROM rangers;
 
 
+--problem - 6:
 
-
+SELECT sighting_time  FROM sightings ORDER BY sighting_time DESC LIMIT 2;
 
 
 
