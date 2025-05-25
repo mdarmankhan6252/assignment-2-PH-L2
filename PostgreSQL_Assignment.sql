@@ -27,79 +27,26 @@ CREATE TABLE sightings (
 );
 
 
----rangers data
 
-INSERT INTO rangers (name, region) VALUES
-('Meera Sen', 'Northern Highlands'),
-('Rajiv Balan', 'Eastern Grasslands'),
-('Aisha Khan', 'Mangrove Coastline'),
-('Kiran Das', 'Western Savannah'),
-('Neha Sharma', 'Mountain Ridge Forest'),
-('Anil Kapoor', 'Delta Wetlands'),
-('Priya Mehta', 'Southern Rainforest'),
-('Ravi Joshi', 'Eastern Plateau'),
-('Farhan Ali', 'Arid Rocklands'),
-('Divya Nair', 'Central Bamboo Forest'),
-('Suresh Reddy', 'Pine Valley'),
-('Lakshmi Iyer', 'Riverbend Sanctuary'),
-('Manoj Pillai', 'Foggy Hills National Park'),
-('Sneha Roy', 'Coral Reef Reserve'),
-('Tarun Verma', 'Windy Desert Edge'),
-('Pooja Sinha', 'Western Wetlands'),
-('Aditya Rao', 'Lakeview Range'),
-('Nisha Kapoor', 'Orchid Valley'),
-('Varun Jain', 'Sunset Savannah'),
-('Alisha Thomas', 'Cloud Forest Perimeter');
+INSERT INTO rangers ( name, region) VALUES
+('Alice Green', 'Northern Hills'),
+('Bob White', 'River Delta'),
+('Carol King', 'Mountain Range');
 
-
--- species data
 
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
-('Shadow Leopard', 'Panthera pardus noctis', '1894-06-15', 'Endangered'),
-('Golden Langur', 'Trachypithecus geei', '1953-03-02', 'Vulnerable'),
-('Bengal Tiger', 'Panthera tigris tigris', '1758-05-08', 'Endangered'),
-('Indian Pangolin', 'Manis crassicaudata', '1822-09-14', 'Vulnerable'),
-('Red Panda', 'Ailurus fulgens', '1825-12-01', 'Endangered'),
-('Snow Leopard', 'Panthera uncia', '1775-07-22', 'Endangered'),
-('Asiatic Lion', 'Panthera leo persica', '1826-10-10', 'Endangered'),
-('Sloth Bear', 'Melursus ursinus', '1791-11-17', 'Vulnerable'),
-('Ganges River Dolphin', 'Platanista gangetica', '1801-03-29', 'Endangered'),
-('Indian Star Tortoise', 'Geochelone elegans', '1831-01-26', 'Vulnerable'),
-('Great Indian Bustard', 'Ardeotis nigriceps', '1861-04-03', 'Endangered'),
-('Indian Wolf', 'Canis lupus pallipes', '1832-07-13', 'Endangered'),
-('Himalayan Monal', 'Lophophorus impejanus', '1790-08-04', 'Vulnerable'),
-('Malabar Civet', 'Viverra civettina', '1862-05-21', 'Endangered'),
-('Blackbuck', 'Antilope cervicapra', '1758-02-17', 'Vulnerable'),
-('Nicobar Megapode', 'Megapodius nicobariensis', '1840-06-30', 'Endangered'),
-('Fishing Cat', 'Prionailurus viverrinus', '1827-10-22', 'Vulnerable'),
-('Rusty-spotted Cat', 'Prionailurus rubiginosus', '1831-12-12', 'Vulnerable'),
-('Nilgiri Tahr', 'Nilgiritragus hylocrius', '1841-09-19', 'Endangered'),
-('Indian Cobra', 'Naja naja', '1758-03-10', 'Vulnerable');
+('Snow Leopard', 'Panthera uncia', '1775-01-01', 'Endangered'),
+('Bengal Tiger', 'Panthera tigris tigris', '1758-01-01', 'Endangered'),
+('Red Panda', 'Ailurus fulgens', '1825-01-01', 'Vulnerable'),
+('Asiatic Elephant', 'Elephas maximus indicus', '1758-01-01', 'Endangered');
 
 
--- sightings data
+INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VALUES
+(1, 1, 'Peak Ridge', '2024-05-10 07:45:00', 'Camera trap image captured'),
+(2, 2, 'Bankwood Area', '2024-05-12 16:20:00', 'Juvenile seen'),
+(3, 3, 'Bamboo Grove East', '2024-05-15 09:10:00', 'Feeding observed'),
+(1, 2, 'Snowfall Pass', '2024-05-18 18:30:00', NULL);
 
-INSERT INTO sightings (ranger_id, species_id, sighting_time, location, notes) VALUES
-(7, 12, '2024-12-02', 'Northern Highlands - Sector A', 'Tracks found near waterhole'),
-(15, 1, '2024-11-28', 'Eastern Grasslands - Trail 5', 'Seen resting under shade'),
-(3, 17, '2025-01-05', 'Mangrove Coastline - Estuary', 'Swimming near the banks'),
-(12, 8, '2024-10-21', 'Western Savannah - Ridge Area', 'Group of three spotted'),
-(5, 20, '2025-02-10', 'Mountain Ridge Forest - West Slope', 'Roaring heard, no visual'),
-(1, 4, '2025-03-14', 'Delta Wetlands - Island Patch', 'Footprints and broken shrubs'),
-(20, 6, '2024-09-12', 'Southern Rainforest - South Loop', 'Seen from observation tower'),
-(8, 2, '2024-12-25', 'Eastern Plateau - Watchpoint 2', 'Brief visual confirmation'),
-(9, 10, '2025-04-03', 'Arid Rocklands - Cave Entrance', 'Sheltering from heat'),
-(11, 9, '2025-03-30', 'Central Bamboo Forest - East Path', 'Eaten foliage spotted'),
-(4, 15, '2025-05-02', 'Pine Valley - Northern Trail', 'Quick movement through trees'),
-(6, 3, '2025-01-22', 'Riverbend Sanctuary - Marsh Edge', 'Calls heard, possibly mating'),
-(13, 19, '2025-02-18', 'Foggy Hills - High Ridge', 'Spotted briefly in mist'),
-(14, 18, '2025-03-05', 'Coral Reef Reserve - Lagoon Area', 'Seen swimming gracefully'),
-(16, 5, '2025-03-28', 'Windy Desert Edge - Rock Cluster', 'Seen near burrow'),
-(18, 13, '2024-12-11', 'Western Wetlands - Observation Deck', 'Noticed resting on log'),
-(17, 7, '2025-04-08', 'Lakeview Range - Cliffside Trail', 'Observed with binoculars'),
-(2, 11, '2025-05-11', 'Orchid Valley - Lower Grove', 'Nocturnal movement recorded'),
-(10, 14, '2025-02-14', 'Sunset Savannah - South Boundary', 'Pair seen hunting'),
-(19, 16, '2025-01-17', 'Cloud Forest Perimeter - Fogline', 'Camera trap capture confirmed');
 
 
 
@@ -111,7 +58,7 @@ SELECT * FROM sightings;
 
 --problem - 1: 
 
-INSERT INTO rangers(name, region) VALUES ('Derek Fox', 'Coastal Plains');
+INSERT INTO rangers (name, region) VALUES ('Derek Fox', 'Coastal Plains');
 
 
 --problem - 2: 
@@ -123,12 +70,33 @@ SELECT count(DISTINCT  species_id) AS unique_species_count FROM sightings;
 SELECT * FROM sightings WHERE location ILIKE '%Pass%';
 
 
-
 --problem - 4:
 
 SELECT name, count(sighting_id) AS total_sightings  
 FROM rangers AS r
 LEFT JOIN sightings AS s ON r.ranger_id = s.ranger_id GROUP BY r.name;
+
+
+
+--problem - 5:
+
+SELECT common_name 
+FROM species
+WHERE species_id NOT IN(
+    SELECT DISTINCT species_id FROM sightings
+);
+
+--problem - 6:
+
+SELECT common_name, sighting_time, name
+FROM sightings 
+JOIN species ON sightings.species_id = species.species_id
+JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+ORDER BY sighting_time DESC
+LIMIT 2;
+
+
+
 
 
 
