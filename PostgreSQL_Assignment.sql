@@ -13,7 +13,7 @@ CREATE TABLE species (
     scientific_name VARCHAR(100) NOT NULL,
     discovery_date DATE,
     conservation_status VARCHAR(50) CHECK (
-        conservation_status IN ('Endangered', 'Vulnerable')
+        conservation_status IN ('Endangered', 'Vulnerable', 'Historic' )
     )
 );
 
@@ -21,10 +21,12 @@ CREATE TABLE sightings (
     sighting_id SERIAL PRIMARY KEY,
     ranger_id INTEGER REFERENCES rangers (ranger_id) ON DELETE CASCADE,
     species_id INTEGER REFERENCES species (species_id) ON DELETE CASCADE,
-    sighting_time DATE,
+    sighting_time TIMESTAMP,
     location VARCHAR(150) NOT NULL,
     notes TEXT
 );
+
+DROP TABLE rangers;
 
 
 
@@ -63,7 +65,7 @@ INSERT INTO rangers (name, region) VALUES ('Derek Fox', 'Coastal Plains');
 
 --problem - 2: 
 
-SELECT count(DISTINCT  species_id) AS unique_species_count FROM sightings;
+SELECT COUNT(DISTINCT  species_id) AS unique_species_count FROM sightings;
 
 --problem - 3:
 
@@ -72,7 +74,7 @@ SELECT * FROM sightings WHERE location ILIKE '%Pass%';
 
 --problem - 4:
 
-SELECT name, count(sighting_id) AS total_sightings  
+SELECT name, COUNT(sighting_id) AS total_sightings  
 FROM rangers AS r
 LEFT JOIN sightings AS s ON r.ranger_id = s.ranger_id GROUP BY r.name;
 
@@ -96,10 +98,29 @@ ORDER BY sighting_time DESC
 LIMIT 2;
 
 
+--problem - 7:
+
+UPDATE species SET conservation_status = 'Historic' 
+WHERE EXTRACT(YEAR FROM discovery_date) < 1800 ;
+
+
+--problem - 8:
+
+SELECT sighting_id, CASE
+WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
+WHEN EXTRACT(HOUR FROM sighting_time) BETWEEN 12 AND 17 THEN 'Afternoon'
+ELSE 'Evening'
+END AS time_of_day
+FROM sightings;
 
 
 
+--problem - 9:
 
+-- DELETE FROM rangers
+-- WHERE NOT EXISTS (
+--     SELECT 1 FROM sightings WHERE sightings.ranger_id = rangers.ranger_id
+-- );
 
 
 
