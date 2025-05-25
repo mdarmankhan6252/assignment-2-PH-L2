@@ -52,7 +52,6 @@ INSERT INTO rangers (name, region) VALUES
 ('Alisha Thomas', 'Cloud Forest Perimeter');
 
 
-SELECT * FROM rangers;
 -- species data
 
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
@@ -117,22 +116,23 @@ INSERT INTO rangers(name, region) VALUES ('Derek Fox', 'Coastal Plains');
 
 --problem - 2: 
 
-SELECT count(*) as unique_species_count FROM species;
-
+SELECT count(DISTINCT  species_id) AS unique_species_count FROM sightings;
 
 --problem - 3:
 
 SELECT * FROM sightings WHERE location ILIKE '%Pass%';
 
 
+
 --problem - 4:
 
-SELECT * FROM rangers;
+SELECT name, count(sighting_id) AS total_sightings  
+FROM rangers AS r
+LEFT JOIN sightings AS s ON r.ranger_id = s.ranger_id GROUP BY r.name;
 
 
---problem - 6:
 
-SELECT sighting_time  FROM sightings ORDER BY sighting_time DESC LIMIT 2;
+
 
 
 
