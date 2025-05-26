@@ -122,6 +122,18 @@ FROM sightings;
 --     SELECT 1 FROM sightings WHERE sightings.ranger_id = rangers.ranger_id
 -- );
 
+SELECT * FROM rangers;
+SELECT * FROM sightings;
 
+DELETE FROM rangers
+WHERE not;
+
+SELECT * FROM rangers AS r JOIN sightings AS s ON r.ranger_id = s.ranger_id (
+    DELETE rangers WHERE notes IS NULL
+);
+
+DELETE rangers USING sightings 
+WHERE rangers.ranger_id = sightings.ranger_id 
+AND rangers.notes IS NULL;
 
 

@@ -1,5 +1,9 @@
 ## Questions
 
-##### What is the difference between the VARCHAR and CHAR data types?
--- VARCHAR and CHAR is the is the data type of sql that is used to tell the the type of a data.But, there are some difference between these.
--- 1. VARCHAR consist by the two words. VAR + CHAR. The VAR key word refers that variable and CHAR refers that the character. If we use VARCHAR that means the character will be variable type.
+##### 1. What is PostgreSQL?
+<p>PostgreSQL হলো বর্তমানের সবচেয়ে জনপ্রিয় একটি রিলেশনাল ডাটাবেইজ ম্যানেজমেন্ট সিস্টেম। উক্ত ডাটাবেইজে, ডেটাগুলো টেবিল ফরমেটে থাকে এবং Foreign key এর সাহায্যে একটি টেবিলের সাথে অন্য একটি টেবিলের সম্পর্ক (relation) তৈরি করা হয়। এই সিস্টেম খুবই সহজে ডেটাগুলো কোয়েরি করতে সাহায্য করে, যা দেখতে অনেকটাই ইংরেজি ভাষার মতো।</p>
+
+<p>PostgreSQL হলো একটি open-source ডাটাবেইজ ম্যানেজমেন্ট সিস্টেম, যার যাত্রা শুরু হয়েছিলো 1986 সালে, University of California এর কয়েকজন শিক্ষার্থীর মাধ্যমে।</p>
+
+<p>
+বর্তমানে PostgreSQL সকল অপারেটিং সিস্টেমের সাথেই ব্যবহার করা যায় এবং এটি দীর্ঘ সময় ধরে (৩৫ বছরেরও বেশি) বিশ্বব্যাপী ব্যবহার হয়ে আসছে। পৃথিবীর অনেক বিখ্যাত কোম্পানি PostgreSQL ব্যবহার করে। PostgreSQL-এ অগণিত ডেটা স্টোর করা যায়, যা একে আরও জনপ্রিয় করে তুলেছে।</p>
