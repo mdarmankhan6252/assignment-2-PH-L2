@@ -26,8 +26,6 @@ CREATE TABLE sightings (
     notes TEXT
 );
 
-DROP TABLE rangers;
-
 
 
 INSERT INTO rangers ( name, region) VALUES
@@ -48,13 +46,6 @@ INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VA
 (2, 2, 'Bankwood Area', '2024-05-12 16:20:00', 'Juvenile seen'),
 (3, 3, 'Bamboo Grove East', '2024-05-15 09:10:00', 'Feeding observed'),
 (1, 2, 'Snowfall Pass', '2024-05-18 18:30:00', NULL);
-
-
-
-
-SELECT * FROM rangers;
-SELECT * FROM species;
-SELECT * FROM sightings;
 
 
 
@@ -118,18 +109,11 @@ FROM sightings;
 --problem - 9:
 
 
-SELECT * FROM rangers;
-SELECT * FROM sightings;
-
 DELETE FROM rangers
-WHERE not;
-
-SELECT * FROM rangers AS r JOIN sightings AS s ON r.ranger_id = s.ranger_id (
-    DELETE rangers WHERE notes IS NULL
+WHERE ranger_id NOT IN(
+    SELECT DISTINCT ranger_id FROM sightings
 );
 
-DELETE rangers USING sightings 
-WHERE rangers.ranger_id = sightings.ranger_id 
-AND rangers.notes IS NULL;
+
 
 
