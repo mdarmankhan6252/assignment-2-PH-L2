@@ -11,10 +11,13 @@
 ### 2. Explain the Primary Key and Foreign Key concepts in PostgreSQL.
 <p>Primary key এবং Foreign key হলো SQL-এর দুটি গুরুত্বপূর্ণ constraint (শর্ত), যা ডেটার গঠন ও সঠিকতা বজায় রাখতে সাহায্য করে।</p>
 
-- <b>Primary key:</b>
-<p style="margin-left: 50px">Primary key হলো একটি টেবিলের মধ্যে অবস্থিত Row এর ইউনিক আইডেন্টিফায়ার, যার মাধ্যমে প্রত্যেকটি Row-কে আলাদা করে চেনা যায়। প্রত্যেকটি Row-তে ভিন্ন ভিন্ন Primary key থাকে, যা অন্য কোনো key-এর সাথে মেলে না। একাধিক Row-তে একই Primary key থাকতে পারে না এবং এটি null হতে পারে না।</p>
+- **Primary key:**
+Primary key হলো একটি টেবিলের মধ্যে অবস্থিত Row এর ইউনিক আইডেন্টিফায়ার, যার মাধ্যমে প্রত্যেকটি Row-কে আলাদা করে চেনা যায়। প্রত্যেকটি Row-তে ভিন্ন ভিন্ন Primary key থাকে, যা অন্য কোনো key-এর সাথে মেলে না। একাধিক Row-তে একই Primary key থাকতে পারে না এবং এটি null হতে পারে না।
 
-- <b>Foreign key:</b>
-<p style="margin-left: 50px">Foreign key হলো সেই key, যা অন্য কোনো টেবিলের Primary key হলেও, এটি বর্তমান টেবিলের একটি Column-এ অবস্থান করে। এর মাধ্যমে দুটি টেবিলের মধ্যে সম্পর্ক তৈরি হয়। একটি Column-এ একাধিক Foreign key থাকতে পারে না, তবে একটি টেবিলে একাধিক Foreign key থাকতে পারে।</p>
+- **Foreign key:**
+Foreign key হলো সেই key, যা অন্য কোনো টেবিলের Primary key হলেও, এটি বর্তমান টেবিলের একটি Column-এ অবস্থান করে। এর মাধ্যমে দুটি টেবিলের মধ্যে সম্পর্ক তৈরি হয়। একটি Column-এ একাধিক Foreign key থাকতে পারে না, তবে একটি টেবিলে একাধিক Foreign key থাকতে পারে।
+
+
+
 
 
