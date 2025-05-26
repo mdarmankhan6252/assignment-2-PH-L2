@@ -117,10 +117,6 @@ FROM sightings;
 
 --problem - 9:
 
--- DELETE FROM rangers
--- WHERE NOT EXISTS (
---     SELECT 1 FROM sightings WHERE sightings.ranger_id = rangers.ranger_id
--- );
 
 SELECT * FROM rangers;
 SELECT * FROM sightings;
